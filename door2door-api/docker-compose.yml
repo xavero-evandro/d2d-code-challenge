@@ -1,0 +1,24 @@
+version: "3"
+services:
+  mongo:
+    image: mongo
+    container_name: door2door_mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - backend
+
+  api:
+    build: .
+    container_name: door2door_api
+    depends_on:
+      - mongo
+    networks:
+      - backend
+    ports:
+      - "3333:3333"
+    volumes:
+      - ./:/usr/src/app
+
+networks:
+  backend:
