@@ -4,7 +4,7 @@
 
 Dependencies:
 
-- node: 19 or higher and npm
+- node: 10 or higher and npm
 
 # Local
 
